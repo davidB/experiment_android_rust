@@ -6,8 +6,7 @@ This repo store my journey/exploration about using Rust with android (maybe to c
 
 Install:
 
-- openjdk 1.8 from [AdoptOpenJDK - Open source, prebuilt OpenJDK binaries](https://adoptopenjdk.net/)
-- rust via [rustup.rs - The Rust toolchain installer](https://rustup.rs/)
+- OpenJDK 1.8 from [AdoptOpenJDK - Open source, prebuilt OpenJDK binaries](https://adoptopenjdk.net/)
 - Android Studio from [Download Android Studio and SDK tools  |  Android Developers](https://developer.android.com/studio/)
   
   via `Android Studio > Preferences > Appearance & Behaviour > Android SDK > SDK Tools`
@@ -16,6 +15,17 @@ Install:
   - NDK
   
   There are other way to install `android-sdk` and `android-ndk` (download + unzip or brew or ...) this is the most common way.
+- rust via [rustup.rs - The Rust toolchain installer](https://rustup.rs/)
+
+  and also install some android target platform:
+
+    ```sh
+    rustup target install armv7-linux-androideabi
+    rustup target install arm-linux-androideabi
+    rustup target install aarch64-linux-android
+    rustup target install i686-linux-android
+    rustup target install x86_64-linux-android
+    ```
 
 ## Experimentations
 
