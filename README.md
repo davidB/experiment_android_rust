@@ -24,6 +24,19 @@ Install:
 I try to create shell script to setup the environment variables (PATH, platform,...) like in articles or some samples I found.
 But it was not enough reliable/portable to my taste.
 
+### `exp_1`
+
+A simple Android App that display a "hello world" string computed on rust side, based on the article [Building and Deploying a Rust library on Android](https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-21-rust-on-android.html) but
+
+- without shell script to setup environment
+- with use of [mozilla/rust-android-gradle](https://github.com/mozilla/rust-android-gradle) to build rust code from gradle, the rust lib/module is named `rust`
+
+The project like a 100% Java / Kotlin android project project can be build (and launch) from Android studio, or from shell `./gradlew test`, ...
+
+*Note: Do not write the jvm code to bind to rust (via jni) into Kotlin because it generate not friendly name for rust function to implement (longer than Java and with number), so stay with Java for this class.*
+
+A cool point is that Android studio know where is sdk, ndk,... and share the information with gradle via `local.properties` so it's become more portable project.
+
 ## Links
 
 ### Articles
