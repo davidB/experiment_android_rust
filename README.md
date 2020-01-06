@@ -17,6 +17,13 @@ Install:
   
   There are other way to install `android-sdk` and `android-ndk` (download + unzip or brew or ...) this is the most common way.
 
+## Experimentations
+
+### `exp_0`
+
+I try to create shell script to setup the environment variables (PATH, platform,...) like in articles or some samples I found.
+But it was not enough reliable/portable to my taste.
+
 ## Links
 
 ### Articles
