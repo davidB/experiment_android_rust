@@ -41,12 +41,24 @@ A simple Android App that display a "hello world" string computed on rust side, 
 - without shell script to setup environment
 - with use of [mozilla/rust-android-gradle](https://github.com/mozilla/rust-android-gradle) to build rust code from gradle, the rust lib/module is named `rust`
 
-The project like a 100% Java / Kotlin android project project can be build (and launch) from Android studio, or from shell `./gradlew test`, ...
+The project can be setup, build (and launch) from Android Studio, or from shell `./gradlew test`, ...  like a 100% Java / Kotlin android project project.
 
 *Note: Do not write the jvm code to bind to rust (via jni) into Kotlin because it generate not friendly name for rust function to implement (longer than Java and with number), so stay with Java for this class.*
 
-A cool point is that Android studio know where is sdk, ndk,... and share the information with gradle via `local.properties` so it's become more portable project.
+A cool point is that Android studio know where is `android-sdk`, `android-ndk`,... and share the information with gradle via `local.properties` so it's become more portable project.
 
+### TODO
+
+- allow to run some test on desktop
+- create templates for future projects
+- explore logger (from ndk) [android_logger](https://crates.io/crates/android_logger)
+- explore interaction with java api via [MaulingMonkey/jni-bindgen](https://github.com/MaulingMonkey/jni-bindgen/tree/master/jni-android-sys) or other crates
+- explore oculus vr mobile sdk
+  - bind and launch in headset
+  - display a cude
+  - use vulkan
+  - use a graphics library like rendy
+  
 ## Links
 
 ### Articles
@@ -56,9 +68,13 @@ A cool point is that Android studio know where is sdk, ndk,... and share the inf
 ### Tools & libs
 
 - [mozilla/rust-android-gradle](https://github.com/mozilla/rust-android-gradle) Cross compile Rust Cargo projects for Android targets.
+- [bbqsrc/cargo-ndk: Compile Rust projects against the Android NDK without hassle](https://github.com/bbqsrc/cargo-ndk)
 - [cargo-apk](https://crates.io/crates/cargo-apk) Cargo subcommand that allows you to build Android packages (last release 0.4.0 2017-12)
-- [android-ndk](https://crates.io/crates/android-ndk) Safe Rust bindings to the Android NDK
+- [snipsco/dinghy: Easier cross-compilation for phones and single boards computers](https://github.com/snipsco/dinghy) - [android-ndk](https://crates.io/crates/android-ndk) Safe Rust bindings to the Android NDK
+- [MaulingMonkey/jni-bindgen: Generate Rust JVM FFI wrappers around APIs defined by .jar or .class files, because maintaining your own hand-written bindings is an exercise in boredom, soundness bugs, and pain.](https://github.com/MaulingMonkey/jni-bindgen)
 - [ffizer/ffizer: ffizer is a files and folders initializer / generator. Create any kind (or part) of project from template.](https://github.com/ffizer/ffizer/), I'll try to create template for project on android+rust & android+rust+oculus
+- [mb64/android-ndk-rs: Rust bindings to the Android NDK](https://github.com/mb64/android-ndk-rs)
+- [Nercury/android_logger-rs: A Rust logging implementation for `log` which hooks to android log output](https://github.com/Nercury/android_logger-rs)
 
 ### Sample projects
 
