@@ -1,14 +1,14 @@
 [package]
 name = "rust"
 version = "0.1.0"
-authors = ["David Bernard <david.bernard.31@gmail.com>"]
+authors = ["David Bernard"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 
-[target.'cfg(target_os="android")'.dependencies]
+#[target.'cfg(target_os="android")'.dependencies]
 jni = { version = "0.5", default-features = false }
 
 [lib]
