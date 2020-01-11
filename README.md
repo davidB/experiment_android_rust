@@ -38,14 +38,21 @@ But it was not enough reliable/portable to my taste.
 
 A simple Android App that display a "hello world" string computed on rust side, based on the article [Building and Deploying a Rust library on Android](https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-21-rust-on-android.html) but
 
-- without shell script to setup environment
+- without shell script to setup environment (except java & rust path)
 - with use of [mozilla/rust-android-gradle](https://github.com/mozilla/rust-android-gradle) to build rust code from gradle, the rust lib/module is named `rust`
+- run a java unit test that call rust code (via `./gradlew test`, on Android Studio it requires custom configuration).
 
 The project can be setup, build (and launch) from Android Studio, or from shell `./gradlew test`, ...  like a 100% Java / Kotlin android project project.
 
 *Note: Do not write the jvm code to bind to rust (via jni) into Kotlin because it generate not friendly name for rust function to implement (longer than Java and with number), so stay with Java for this class.*
 
 A cool point is that Android studio know where is `android-sdk`, `android-ndk`,... and share the information with gradle via `local.properties` so it's become more portable project.
+
+### `exp_2`
+
+- Based on `exp_1`
+- MainActivity delegates calls to rust code
+- Rust code logs via ndk (use crate `android_logger`)
 
 ### TODO
 
@@ -64,6 +71,7 @@ A cool point is that Android studio know where is `android-sdk`, `android-ndk`,.
 ### Articles
 
 - [Building and Deploying a Rust library on Android](https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-21-rust-on-android.html), the basic and could be simplify / automate with tools
+- [Rust for NDK development - Hoang Phan](https://hoangpq.github.io/posts/rust-ndk/) based on (or update) the article above provided by mozilla + more samples & details, integration ith kotlin,...
 
 ### Tools & libs
 
@@ -79,3 +87,5 @@ A cool point is that Android studio know where is `android-sdk`, `android-ndk`,.
 ### Sample projects
 
 - [makepad/rustquest: This is a minimal example project for the Oculus Quest, written completely in Rust.](https://github.com/makepad/rustquest), made to build on linux, I  tied to adapt it for mac osx but got some strange error, so I decided to make my journey from scratch.
+- [kennytm/rust-ios-android: Example project for building a library for iOS + Android in Rust.](https://github.com/kennytm/rust-ios-android)
+- [Geal/rust_on_mobile](https://github.com/Geal/rust_on_mobile) dual Android & iOS, and very old (no update since 2016)
